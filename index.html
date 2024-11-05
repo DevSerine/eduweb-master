@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tag
+  -->
+  <title>UMC²-Formations</title>
+  <meta name="title" content="UMC²-Formations">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <link rel="icon" href="./assets/images/298965322_590769052746150_8670259412285492580_n.png" type="image/png">
+
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-bg.svg">
+  <link rel="preload" as="image" href="./assets/images/hero-banner-1.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-banner-2.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-shape-1.svg">
+  <link rel="preload" as="image" href="./assets/images/hero-shape-2.png">
+  
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="./assets/images/logoLAFIN.png" width="162" height="50" alt="logo">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="wrapper">
+          <a href="#" class="logo">
+            <img src="./assets/images/logoLAFIN.png" width="162" height="50" alt="logo">
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="#home" class="navbar-link" data-nav-link>Accueil</a>
+          </li>
+
+          <style>
+            .navbar-link.active {
+  position: relative;
+  color: #ffffff;
+  background-color: #009FB0;/* Couleur de fond */
+  padding: 8px 16px;
+  border-radius: 5px; /* Coins arrondis */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-link.active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 5px;
+  box-shadow: 0 0 15px #009FB0; /* Couleur de glow */
+  z-index: -1;
+  transition: box-shadow 0.3s ease;
+}
+
+          </style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section"); // Sélectionne les sections
+  const navLinks = document.querySelectorAll(".navbar-link");
+
+  window.addEventListener("scroll", () => {
+    let currentSection = "";
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+
+      if (pageYOffset >= sectionTop - sectionHeight / 3) {
+        currentSection = section.getAttribute("id"); // Obtenez l'ID de la section visible
+      }
+    });
+
+    // Ajoute la classe active au lien correspondant et la retire des autres
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").includes(currentSection)) {
+        link.classList.add("active");
+      }
+    });
+  });
+});
+
+</script>
+          <li class="navbar-item">
+            <a href="#category" class="navbar-link" data-nav-link>Catégorie</a>
+        </li>
+
+          <li class="navbar-item">
+            <a href="#about" class="navbar-link" data-nav-link>UMC²-Formations?</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#courses" class="navbar-link" data-nav-link>Cours</a>
+          </li>
+        </ul>
+
+      </nav>
+
+      <div class="header-actions">
+
+        <button class="header-action-btn" aria-label="toggle search" title="Search">
+          <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <button class="header-action-btn" aria-label="cart" title="Cart">
+          <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
+
+          <span class="btn-badge">0</span>
+        </button>
+
+        <button class="header-action-btn" aria-label="cart" title="Cart">
+          <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+
+         
+
+        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero has-bg-image" id="home" aria-label="home"
+        style="background-image: url('./assets/images/hero-bg.svg')">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <h1 class="h1 section-title">
+              <span class="span">UMC²</span>-Make it smart ! 
+            </h1>
+
+            <p class="hero-text">
+              UMC², fondé en 2020 par UMAITEK, est un centre de formation agréé par l'état .
+            </p>
+
+            <a href="#" class="btn has-before">
+              <ion-icon name="call-outline" aria-hidden="true"></ion-icon><span class="span">+213(0) 560 005 524</span>
+
+             
+            </a>
+<br>
+            <a href="#" class="btn has-before">
+              <ion-icon name="mail-outline" aria-hidden="true"></ion-icon><span class="span">formation@umc2algerie.com</span>
+
+              
+            </a>
+
+          </div>
+
+          <figure class="hero-banner">
+
+            <div class="img-holder one" style="--width: 270; --height: 300;">
+              <img src="./assets/images/298965322_590769052746150_8670259412285492580_n.png" width="270" height="300" alt="hero banner" class="img-cover">
+            </div>
+
+            <div class="img-holder two" style="--width: 240; --height: 370;">
+              <img src="./assets/images/HJHJ.png" width="240" height="370" alt="hero banner" class="img-cover">
+            </div>
+
+
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #CATEGORY
+      -->
+      <section class="section category" aria-label="category" id="category">
+        <div class="container">
+      
+          <p class="section-subtitle">Categories</p>
+      
+          <h2 class="h2 section-title">
+            Decouvrez nos <span class="span">Domaines</span> de Formation!
+          </h2>
+      
+          <p class="section-text"> 
+         Ici Diversités,Actualités !
+          </p>
+      
+          <ul class="grid-list">
+      
+            <li>
+              <div class="category-card" style="--color: 170, 75%, 41%">
+      
+                <div class="card-icon">
+                  <img src="./assets/images/transparent-training-icon-free-png.webp" width="80" height="80" loading="lazy"
+                    alt="Les formations" class="img">
+                </div>
+      
+                <h3 class="h3">
+                  <a href="#" class="card-title">Les formations</a>
+                </h3>
+      
+                <span class="card-badge">7 Courses</span>
+      
+              </div>
+            </li>
+      
+            <li>
+              <div class="category-card" style="--color: 351, 83%, 61%">
+      
+                <div class="card-icon">
+                  <img src="./assets/images/redhat-logo-259A623E59-seeklogo.com.png" width="40" height="40" loading="lazy"
+                    alt="Redhat Linux" class="img">
+                </div>
+      
+                <h3 class="h3">
+                  <a href="#" class="card-title">Redhat Linux</a>
+                </h3>
+      
+                <span class="card-badge">6 Courses</span>
+      
+              </div>
+            </li>
+      
+            <li>
+              <div class="category-card" style="--color: 229, 75%, 58%">
+      
+                <div class="card-icon">
+                  <img src="./assets/images/oracle-linux (1).png" width="80" height="70" loading="lazy"
+                    alt="Oracle Linux" class="img">
+                </div>
+      
+                <h3 class="h3">
+                  <a href="#" class="card-title">Oracle Linux</a>
+                </h3>
+      
+                <span class="card-badge">5 Courses</span>
+      
+              </div>
+            </li>
+      
+            <li>
+              <div class="category-card" style="--color: 42, 94%, 55%">
+      
+                <div class="card-icon">
+                  <img src="./assets/images/lock-icon-17.png" width="40" height="40" loading="lazy"
+                    alt="IT Sécurité" class="img">
+                </div>
+      
+                <h3 class="h3">
+                  <a href="#" class="card-title">IT Sécurité</a>
+                </h3>
+      
+                <span class="card-badge">8 Courses</span>
+      
+              </div>
+            </li>
+      
+            <li>
+              <div class="category-card" style="--color: 23, 74%, 52%">
+      
+                <div class="card-icon">
+                  <img src="./assets/images/zimbra (1).png" width="80" height="80" loading="lazy"
+                    alt="Zimbra CS" class="img">
+                </div>
+      
+                <h3 class="h3">
+                  <a href="#" class="card-title">Zimbra CS</a>
+                </h3>
+      
+                <span class="card-badge">4 Courses</span>
+      
+              </div>
+            </li>
+      
+            <li>
+              <div class="category-card" style="--color: 240, 85%, 56%">
+      
+                <div class="card-icon">
+                  <img src="./assets/images/6024165.png" width="40" height="40" loading="lazy"
+                    alt="VoIP IPBX" class="img">
+                </div>
+      
+                <h3 class="h3">
+                  <a href="#" class="card-title">VoIP IPBX</a>
+                </h3>
+      
+                <span class="card-badge">7 Courses</span>
+      
+              </div>
+            </li>
+      
+            <li>
+              <div class="category-card" style="--color: 196, 71%, 55%">
+      
+                <div class="card-icon">
+                  <img src="./assets/images/5914044.png" width="40" height="40" loading="lazy"
+                    alt="Database" class="img">
+                </div>
+      
+                <h3 class="h3">
+                  <a href="#" class="card-title">Database</a>
+                </h3>
+      
+                <span class="card-badge">5 Courses</span>
+      
+              </div>
+            </li>
+      
+            <li>
+              <div class="category-card" style="--color: 310, 77%, 53%">
+      
+                <div class="card-icon">
+                  <img src="./assets/images/285121.png" width="80" height="80" loading="lazy"
+                    alt="Alfresco GED" class="img">
+                </div>
+      
+                <h3 class="h3">
+                  <a href="#" class="card-title">Alfresco GED</a>
+                </h3>
+      
+                <span class="card-badge">6 Courses</span>
+      
+              </div>
+            </li>
+      
+            <li>
+              <div class="category-card" style="--color: 110, 83%, 47%">
+      
+                <div class="card-icon">
+                  <img src="./assets/images/11096817.png" width="40" height="40" loading="lazy"
+                    alt="Technologies Web" class="img">
+                </div>
+      
+                <h3 class="h3">
+                  <a href="#" class="card-title">Technologies Web</a>
+                </h3>
+      
+                <span class="card-badge">9 Courses</span>
+      
+              </div>
+            </li>
+      
+            <li>
+              <div class="category-card" style="--color: 285, 69%, 62%">
+      
+                <div class="card-icon">
+                  <img src="./assets/images/output-onlinepngtools (3).png" width="80" height="80" loading="lazy"
+                    alt="Datacenter" class="img">
+                </div>
+      
+                <h3 class="h3">
+                  <a href="#" class="card-title">Datacenter</a>
+                </h3>
+      
+                <span class="card-badge">3 Courses</span>
+      
+              </div>
+            </li>
+      
+          </ul>
+      
+        </div>
+      </section>
+      
+
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" id="about" aria-label="à propos">
+        <div class="container">
+      
+          <figure class="about-banner">
+      
+            <div class="img-holder" style="--width: 520; --height: 370;">
+              <img src="./assets/images/Source code-amico.png" width="520" height="370" loading="lazy" alt="bannière à propos"
+                class="img-cover">
+            </div>
+      
+          
+      
+            <img src="./assets/images/about-shape-3.png" width="722" height="528" loading="lazy" alt=""
+              class="shape about-shape-3">
+      
+          </figure>
+      
+          <div class="about-content">
+      
+            <p class="section-subtitle">UMC²-Formations?</p>
+           
+            <p class="section-text">
+              <h1 style="color: #009FB0; font-weight: bold; font-style: italic;" >UMC²</h1> est un centre de formation professionnelle, agréé par l'état, créé en 2020 par la société UMAITEK. Spécialisé dans les formations qualifiantes et certifiantes, nos formations couvrent les domaines suivants :
+            </p>
+      
+            <ul class="about-list">
+      
+              <li class="about-item">
+                <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+      
+                <span class="span">Technologies Linux Redhat</span>
+              </li>
+      
+              <li class="about-item">
+                <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+      
+                <span class="span">DataCenter, Virtualisation, Cloud</span>
+              </li>
+      
+              <li class="about-item">
+                <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+      
+                <span class="span">Stockage, Réseautage</span>
+              </li>
+
+              <li class="about-item">
+                <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+      
+                <span class="span">Cybersécurité</span>
+              </li>
+
+              <li class="about-item">
+                <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+      
+                <span class="span">Gestion de Projet</span>
+              </li>
+      
+            </ul>
+      
+            <img src="./assets/images/about-shape-4.svg" width="100" height="100" loading="lazy" alt=""
+              class="shape about-shape-4">
+      
+          </div>
+      
+        </div>
+      </section>
+      
+
+
+
+
+
+      <!-- 
+        - #COURSE
+      -->
+
+      <section class="section course" id="courses" aria-label="cours"> 
+        <div class="container">
+      
+          <p class="section-subtitle">Cours Populaires</p>
+      
+          <h2 class="h2 section-title">Choisissez un Cours pour Commencer</h2>
+      
+          <ul class="grid-list">
+      
+            <li>
+              <div class="course-card">
+      
+                <figure class="card-banner img-holder" style="--width: 370; --height: 220;">
+                  <img src="./assets/images/1729430391071.jpeg" width="370" height="220" loading="lazy"
+                    alt="Construire des Sites Web Responsifs avec HTML et CSS" class="img-cover">
+                </figure>
+      
+                <div class="abs-badge">
+                  <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+      
+                  <span class="span">3 Semaines</span>
+                </div>
+      
+                <div class="card-content">
+      
+                  <span class="badge">Débutant</span>
+      
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Construire des Sites Web Responsifs avec HTML et CSS</a>
+                  </h3>
+      
+                  <div class="wrapper">
+      
+                    <div class="rating-wrapper">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+      
+                    <p class="rating-text">(5.0/7 Évaluation)</p>
+      
+                  </div>
+      
+                  <data class="price" value="29">29 $</data>
+      
+                  <ul class="card-meta-list">
+      
+                    <li class="card-meta-item">
+                      <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+      
+                      <span class="span">8 Leçons</span>
+                    </li>
+      
+                    <li class="card-meta-item">
+                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+      
+                      <span class="span">20 Apprenants</span>
+                    </li>
+      
+                  </ul>
+      
+                </div>
+      
+              </div>
+            </li>
+      
+            <li>
+              <div class="course-card">
+      
+                <figure class="card-banner img-holder" style="--width: 370; --height: 220;">
+                  <img src="./assets/images/1719756026966.jpeg" width="370" height="220" loading="lazy"
+                    alt="Masterclass de Programmation Java pour Développeurs de Logiciels" class="img-cover">
+                </figure>
+      
+                <div class="abs-badge">
+                  <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+      
+                  <span class="span">8 Semaines</span>
+                </div>
+      
+                <div class="card-content">
+      
+                  <span class="badge">Avancé</span>
+      
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Masterclass de Programmation Java pour Développeurs de Logiciels</a>
+                  </h3>
+      
+                  <div class="wrapper">
+      
+                    <div class="rating-wrapper">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+      
+                    <p class="rating-text">(4.5/9 Évaluation)</p>
+      
+                  </div>
+      
+                  <data class="price" value="49">49 $</data>
+      
+                  <ul class="card-meta-list">
+      
+                    <li class="card-meta-item">
+                      <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+      
+                      <span class="span">15 Leçons</span>
+                    </li>
+      
+                    <li class="card-meta-item">
+                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+      
+                      <span class="span">35 Apprenants</span>
+                    </li>
+      
+                  </ul>
+      
+                </div>
+      
+              </div>
+            </li>
+      
+            <li>
+              <div class="course-card">
+      
+                <figure class="card-banner img-holder" style="--width: 370; --height: 220;">
+                  <img src="./assets/images/1719755421719.jpeg" width="370" height="220" loading="lazy"
+                    alt="Le Cours Complet de Camtasia pour Créateurs de Contenu" class="img-cover">
+                </figure>
+      
+                <div class="abs-badge">
+                  <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+      
+                  <span class="span">3 Semaines</span>
+                </div>
+      
+                <div class="card-content">
+      
+                  <span class="badge">Intermédiaire</span>
+      
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Le Cours Complet de Camtasia pour Créateurs de Contenu</a>
+                  </h3>
+      
+                  <div class="wrapper">
+      
+                    <div class="rating-wrapper">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+      
+                    <p class="rating-text">(4.9/7 Évaluation)</p>
+      
+                  </div>
+      
+                  <data class="price" value="35">35 $</data>
+      
+                  <ul class="card-meta-list">
+      
+                    <li class="card-meta-item">
+                      <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+      
+                      <span class="span">13 Leçons</span>
+                    </li>
+      
+                    <li class="card-meta-item">
+                      <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+      
+                      <span class="span">18 Apprenants</span>
+                    </li>
+      
+                  </ul>
+      
+                </div>
+      
+              </div>
+            </li>
+      
+          </ul>
+      
+          <a href="#" class="btn has-before">
+            <span class="span">Parcourir d'autres cours</span>
+      
+            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+          </a>
+      
+        </div>
+      </section>
+      
+
+
+
+
+
+      <!-- 
+        - #VIDEO
+      -->
+
+      <section class="video has-bg-image" aria-label="video"
+        style="background-image: url('./assets/images/video-bg.png')">
+        <div class="container">
+
+          <div class="video-card">
+
+            <div class="video-banner img-holder has-after" style="--width: ; --height: ;">
+                <video src="./assets/images/FINAL.mp4" width="970" height="550" loading="lazy" alt="video banner"
+                       class="img-cover" loop autoplay muted>
+                </video>
+            </div>
+        
+            <img src="./assets/images/video-shape-2.png" width="158" height="174" loading="lazy" alt=""
+                 class="shape video-shape-2">
+        
+        </div>
+        
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #STATE
+      -->
+
+      <section class="section stats" aria-label="stats">
+        <div class="container">
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="stats-card" style="--color: 170, 75%, 41%">
+                <h3 class="card-title">70+</h3>
+          
+                <p class="card-text">Apprenants Inscrits</p>
+              </div>
+            </li>
+          
+            <li>
+              <div class="stats-card" style="--color: 351, 83%, 61%">
+                <h3 class="card-title">30+</h3>
+          
+                <p class="card-text">Cours Complétés</p>
+              </div>
+            </li>
+          
+            <li>
+              <div class="stats-card" style="--color: 260, 100%, 67%">
+                <h3 class="card-title">100%</h3>
+          
+                <p class="card-text">Taux de Satisfaction</p>
+              </div>
+            </li>
+          
+            <li>
+              <div class="stats-card" style="--color: 42, 94%, 55%">
+                <h3 class="card-title">20+</h3>
+          
+                <p class="card-text">Formateurs agréés</p>
+              </div>
+            </li>
+          
+          </ul>
+          
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #BLOG
+      -->
+
+      <section class="section brand-list" id="brands" aria-label="brands">
+        <div class="container">
+    
+            <h1 class="h2 section-title">Nos Partenaires</h1>
+           <ul class="brand-grid-list">
+            
+                <li class="brand-item">
+                    <a href="https://www.brand1.com" target="_blank">
+                        <img src="assets/images/zimbra (1).png" alt="Brand 1 Logo" width="100" height="100">
+                    </a>
+                </li>
+                <li class="brand-item">
+                    <a href="https://www.brand2.com" target="_blank">
+                        <img src="assets/images/cisco-logo-transparent (1).png" alt="Brand 2 Logo" width="100" height="100">
+                    </a>
+                </li>
+                <li class="brand-item">
+                    <a href="https://www.brand3.com" target="_blank">
+                        <img src="assets/images/output-onlinepngtools (3) (1).png" alt="Brand 3 Logo" width="100" height="100">
+                    </a>
+                </li>
+                <li class="brand-item">
+                    <a href="https://www.brand4.com" target="_blank">
+                        <img src="assets/images/285121.png" alt="Brand 4 Logo" width="100" height="100">
+                    </a>
+                </li>
+
+                <li class="brand-item">
+                  <a href="https://www.brand4.com" target="_blank">
+                      <img src="assets/images/oracle-linux (1).png" alt="Brand 4 Logo" width="100" height="100">
+                  </a>
+              </li>
+
+              <li class="brand-item">
+                <a href="https://www.brand4.com" target="_blank">
+                    <img src="assets/images/Red_Hat-Logo.wine.png" alt="Brand 4 Logo" width="100" height="100">
+                </a>
+            </li>
+
+            </ul>
+    
+        </div>
+    </section>
+
+    <style>
+      .brand-grid-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px; /* Espace entre les logos */
+    flex-wrap: wrap; /* Pour passer à la ligne si nécessaire */
+    justify-content: center; /* Centrer les éléments horizontalement */
+}
+
+.brand-item {
+    display: flex;
+    align-items: center;
+}
+
+.brand-item img {
+    width: 150px; /* Ajuste la taille de l'image selon tes besoins */
+    height: auto;
+    transition: transform 0.3s; /* Animation au survol */
+}
+
+.brand-item a:hover img {
+    transform: scale(1.1); /* Agrandit légèrement l'image au survol */
+}
+
+    </style>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer" style="background-image: url('./assets/images/footer-bg.png')">
+
+    <div class="footer-top section">
+      <div class="container grid-list">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logoLAFIN.png" width="162" height="50" alt="EduWeb logo">
+          </a>
+
+          <div class="wrapper">
+            <span class="span">Locale:</span>
+              <address class="address">Cite Pons N 178 Jolie vue 2 Kouba, Kouba, Algeria</address>
+          </div>
+
+          <div id="map" style="height: 150px; width: 100%;"></div>
+
+<!-- Inclure la bibliothèque Leaflet en premier -->
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
+<!-- Script pour initialiser la carte avec les coordonnées -->
+<script>
+    // Initialisation de la carte
+    const map = L.map('map').setView([36.7333, 3.0833], 15);
+
+    // Ajouter la carte OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    // Ajouter un marqueur
+    L.marker([36.7333, 3.0833]).addTo(map)
+        .bindPopup('<b>Siège social</b><br>Cite Pons N 178 Jolie vue 2 Kouba, Alger, DZ')
+        .openPopup();
+</script>
+
+          <br>
+
+          <div class="wrapper">
+            <span class="span">Tel:</span>
+
+            <a href="#" class="footer-link">+213(0) 560 005 524
+
+            </a>
+          </div>
+
+          <div class="wrapper">
+            <span class="span">E-mail:</span>
+
+            <a href="#" class="footer-link">formation@umc2algerie.com</a>
+          </div>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">NavBar</p>
+          </li>
+          <li>
+            <a href="#" class="footer-link">Accueil</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Catégorie</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">UMC²-Formations?</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Cours</a>
+          </li>
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Liens</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Contactez-nous</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Galerie</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Actualités et articles</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">FAQ</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Connexion/Inscription</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">À venir</a>
+          </li>
+
+        </ul>
+
+        <div class="footer-list ">
+
+          <p class="footer-list-title">>_Contact
+          </p>
+
+          <p class="footer-list-text">
+            Entrez votre adresse e-mail pour plus de details !
+          </p>
+
+          <form action="" class="newsletter-form">
+            <input type="email" name="email_address" placeholder="Your email" required class="input-field">
+
+            <button type="submit" class="btn has-before">
+              <span class="span">Envoyer</span>
+
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </form>
+
+          <ul class="social-list">
+
+            
+
+            <li>
+              <a href="https://www.facebook.com/UMC2.dz?locale=fr_FR" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.linkedin.com/company/umc2-algerie/about/" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/umc2center" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+             /
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="card"></ion-icon>
+              </a>
+            </li>
+          </ul>
+         
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          © Copyright <a href="#" class="copyright-link">UMC²-Formations</a>. All Rights Reserved Designed by S.Boussaid
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+</body>
+
+</html>
